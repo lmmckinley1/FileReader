@@ -9,27 +9,44 @@ int main()
   string fileName; //to get the name of the file to open
   string line; //to store a single line of a text file
   fstream fileStream; //to open a file for reading
-
+  string input;
+  string file = "data.txt.";
+  int number;
+  string is_open;
+  
   cout<<"What file do you want to open? ";
   getline(cin, fileName);
-  
+  cin>>number
   //STEP 1: open the fileStream for input, using the fileName specified
+  ;fileStream.open(fileName, ios::in);
   
-  if( /*STEP 2: check to see if the fileStream successfully opened*/ )
+ 
+  if (fileStream.is_open())
   {
+    cin.ignore();      
     cout<<fileName<<" opened.\nFILE CONTENTS:\n";
+    while (!fileStream.eof())
+   {
+            getline(fileStream, input);
+            fileName;
+    } 
+    while (!line.empty());
+  }
+  
     
-    //STEP 3: repeat the following until the end-of-file (eof) has been reached...
-    // 3A: read a line from fileStream into the variable line
-    // 3B: display the line, followed by an endline
-  
-    //STEP 4: close the fileStream
-  
-  }
-  else
+  else 
   {
-    cout<<fileName<<" could not be opened.\n";
+          cout<<fileName<<" could not be opened.\n";
   }
+
+
+ //STEP 3: repeat the following until the end-of-file (eof) has been reached...
+// 3A: read a line from fileStream into the variable line
+// 3B: display the line, followed by an endline
+//STEP 4: close the fileStream
+  
+   fileStream.close();
+  
 
   return 0;
 }
