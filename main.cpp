@@ -13,7 +13,9 @@ int main()
   string file = "data.txt.";
   int number;
   string is_open;
-  
+ 
+  fileName.c_str();
+
   cout<<"What file do you want to open? ";
   getline(cin, fileName);
   cin>>number
@@ -23,14 +25,14 @@ int main()
  
   if (fileStream.is_open())
   {
-    cin.ignore();      
+    
     cout<<fileName<<" opened.\nFILE CONTENTS:\n";
-    while (!fileStream.eof())
+    while(!fileStream.eof())
    {
+            cin.ignore();
             getline(fileStream, input);
             fileName;
-    } 
-    while (!line.empty());
+    }  while (!line.empty()); 
   }
   
     
