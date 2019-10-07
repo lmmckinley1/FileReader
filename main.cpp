@@ -17,7 +17,8 @@ int main()
   fileName.c_str();
 
   cout<<"What file do you want to open? ";
-  getline(cin, fileName);
+  cin.ignore(); 
+  getline(cin,fileName);
   cin>>number
   //STEP 1: open the fileStream for input, using the fileName specified
   ;fileStream.open(fileName, ios::in);
@@ -27,8 +28,9 @@ int main()
   {
     
     cout<<fileName<<" opened.\nFILE CONTENTS:\n";
-    while(!fileStream.eof())
+    do
    {
+           !fileStream.eof();
             cin.ignore();
             getline(fileStream, input);
             fileName;
